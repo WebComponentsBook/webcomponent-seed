@@ -2,7 +2,8 @@
   "name": "x-dialog",
   "version": "0.0.1",
   "authors": [
-    "Jarrod Overson <jsoverson@gmail.com>"
+    "Jarrod Overson <jsoverson@gmail.com>",
+    "Jason Strimpel <jstrimpel@gmail.com>"
   ],
   "description": "a dialog box web component",
   "main": "./x-dialog.html",
