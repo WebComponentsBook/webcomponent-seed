@@ -4,11 +4,13 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-vulcanize');
     grunt.loadNpmTasks('grunt-contrib-uglify');
 
+
     var config = {
+        package: require('./package.json'),
         uglify: {
             csp: {
                 files: {
-                    'x-dialog-csp.js': ['x-dialog-csp.js']
+                    '<%= package.name %>-csp.js': ['<%= package.name %>-csp.js']
                 }
             }
         },
@@ -18,20 +20,16 @@ module.exports = function (grunt) {
                 excludes : {
                     imports: [
                         "polymer"
-                    ],
-                    scripts: [
-                        "jquery",
-                        "jenga"
                     ]
                 }
             },
             main: {
-                src: "x-dialog-csp.html",
-                dest: "x-dialog.html"
+                src: "<%= package.name %>-csp.html",
+                dest: "<%= package.name %>.html"
             },
             csp: {
-                src: "components/src/x-dialog.html",
-                dest: "x-dialog-csp.html",
+                src: "components/src/component.html",
+                dest: "<%= package.name %>-csp.html",
                 options: {
                     csp: true
                 }
